@@ -1,4 +1,4 @@
-import { supply,team,tax,pig } from "../../../public/token"
+import { supply,team,tax,pig } from "../../../public/tokenomics"
 import { roadmap } from "../../../public"
 
 export const navLinks = [
@@ -20,12 +20,12 @@ export const navLinks = [
 export const tokenomics = [
     {
         title: "Supply",
-        desc: "50M $",
+        desc: "10B $",
         icon: supply
     },
     {
-        title: "Team",
-        desc: "5%",
+        title: "Team / Content / Hiring",
+        desc: "15%",
         icon: team,
     },
     {

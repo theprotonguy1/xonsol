@@ -13,11 +13,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-[#0a0e14]` }>
-        
+      <body className={`${inter.className} bg-[#0a0e14]`}>
+        <Navbar />
         {children}
         <Footer />
       </body>
     </html>
-  )
+  );
 }

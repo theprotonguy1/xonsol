@@ -1,6 +1,7 @@
 // Assuming you have a Hero component
 "use client"
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect,useState } from "react";
 import { hero1,hero2,hero3,hero4,hero5,hero6,hero7 } from "../../../public/hero";
 
@@ -32,12 +33,14 @@ const Hero = () => {
 
       {/* Content */}
       <div className="relative z-10 text-white text-center">
-        <h1 className="text-4xl font-bold mb-4">XonSol</h1>
+        <h1 className="text-4xl font-bold mb-4">
+          <span className="flickering-text">XonSol</span>
+        </h1>
         <p className="text-lg mb-8">
         Unleash the Xperience!.
         </p>
-        <button className="bg-pink-500 text-white px-4 py-[5px] rounded-full">
-          Explore
+        <button className="bg-pink-500 text-white font-semibold px-4 py-[5px] rounded-full">
+          <Link href="/explore">Explore</Link>
         </button>
       </div>
     </div>

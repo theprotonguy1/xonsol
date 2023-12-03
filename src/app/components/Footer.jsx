@@ -4,7 +4,7 @@ import { BsDiscord } from "react-icons/bs";
 
 const Footer = () => {
   return (
-    <footer className="bg-black-200 shrink-0 py-5 text-white relative bottom-0 w-full max-w-[1200px] mx-auto px-5 rounded-t-2xl">
+    <footer className="bg-black-100 shrink-0 py-5 text-white relative bottom-0 w-full max-w-[1200px] mx-auto px-5 rounded-t-2xl">
 
       <ul className="flex justify-center gap-[25px] mb-[15px] md:my-2 md:gap-12 font-semibold">
         <li className="text-base md:text-base whitespace-no-wrap hover:text-[#fe06f2] cursor-pointer">

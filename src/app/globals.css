@@ -52,10 +52,34 @@ html{
   border-radius: 4px;
 }
 
-/* Track
+/* Track */
 ::-webkit-scrollbar-track {
-  background-color: #353535;
+  background-color: #272727;
   border-radius: 8px;
-} */
+}
 
-/* Timeline */
+@keyframes flicker {
+  0%{
+    color: #ff00ff;
+    text-shadow: none;
+  }
+  18%
+  {
+    color: #ff00ff;
+    text-shadow: none;
+  }
+  20%
+  {
+    color:#ff6ac1;
+    text-shadow: 0 0 7px #00ffff, 0 0 20px #00ff99;
+  }
+  30%
+  {
+    color: #ff00ff;
+    text-shadow: none;
+  }
+}
+
+.flickering-text {
+  animation: flicker 2s infinite;
+}
