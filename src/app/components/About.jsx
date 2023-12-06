@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { girl } from "../../../public";
-
 const About = () => {
   return (
       <section id="about" className="overflow-hidden my-10 p-12 lg:pt-[120px] lg:pb-[90px] bg-[#140a0e] rounded-2xl">

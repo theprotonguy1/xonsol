@@ -1,11 +1,13 @@
 "use client"
 import { Tilt } from 'react-tilt';
+import Image from 'next/image';
 
 import { motion } from 'framer-motion';
 import { styles } from "../styles";
 import { tokenomics } from '../constants';
-import { fadeIn,textVariant } from "../utils/motion";
-import Image from 'next/image';
+import { fadeIn } from "../utils/motion";
+import SectionWrapper from '../hoc/SectionWrapper';
+
 
 const ServiceCard = ({ index, title, icon, desc }) => {
   return (
@@ -32,11 +34,10 @@ const ServiceCard = ({ index, title, icon, desc }) => {
   )
 }
 
-
-const Tokenomics = () => {
+const Tokenomics = (index) => {
   return (
     <div id='tokenomics' className='px-12 my-10'>
-      <motion.div variants={textVariant()}>
+      <motion.div  variants={fadeIn("left","spring",0.5 * index, 0.75)}>
         <h2 className={styles.sectionHeadText}>Tokenomics</h2>
         <p className={styles.sectionSubText}>
           Understand the financial structure and utility dynamics of our token
@@ -53,4 +54,4 @@ const Tokenomics = () => {
   );
 }
 
-export default Tokenomics
+export default SectionWrapper(Tokenomics, "tokenomics")

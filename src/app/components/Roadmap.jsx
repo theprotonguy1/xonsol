@@ -1,23 +1,24 @@
 "use client"
 import Image from "next/image";
-import { motion } from "framer-motion";
-import { textVariant } from "../utils/motion";
+import { motion, spring } from "framer-motion";
+import { slideIn, zoomIn } from "../utils/motion";
 import { roadmaps } from "../constants";
 import { styles } from "../styles";
+import SectionWrapper from "../hoc/SectionWrapper";
 
 const Roadmap = () => {
   return (
     <section id="roadmap" className="my-10">
-      <motion.div variants={textVariant()}>
+      <motion.div variants={zoomIn()}>
         <h2 className={styles.sectionHeadText}>Roadmap</h2>
       </motion.div>
 
       <div className="flex flex-wrap justify-start px-12 mt-12 sm:mt-24 md:space-x-9">
         {/* <div className="flex flex-wrap justify-start mt-8 sm:mt-24 space-y-10 sm:space-y-0"> */}
         {roadmaps.map((roadmap) => (
-          <div
+          <motion.div variants={slideIn("left","spring")}
             key={roadmap.title}
-            className="w-full sm:w-60 flex-shrink-0 mb-6 sm:mb-20 "
+            className="w-full sm:w-60 flex-shrink-0 mb-6 sm:mb-20"
           >
             <div className="flex flex-col items-center space-y-5">
               <div className="w-12 h-12 bg-blue-100 rounded-full flex-shrink-0">
@@ -38,11 +39,11 @@ const Roadmap = () => {
               </time>
               {/* Add more details if needed */}
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>
   );
 };
 
- export default Roadmap;
+ export default SectionWrapper(Roadmap,"roadmap");

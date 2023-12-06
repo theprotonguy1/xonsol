@@ -20,7 +20,7 @@ export const navLinks = [
 export const tokenomics = [
     {
         title: "Supply",
-        desc: "10B $",
+        desc: "10B",
         icon: supply
     },
     {

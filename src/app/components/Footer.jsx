@@ -25,7 +25,7 @@ const Footer = () => {
         </li>
         <li className="text-base md:text-base whitespace-no-wrap hover:text-[#fe06f2] cursor-pointer">
           <a
-            href=""
+            href="https://twitter.com/xonsoll"
             target="_blank"
           >
             <FaXTwitter className="w-[20px] h-[20px]"/>
