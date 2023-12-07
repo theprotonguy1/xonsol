@@ -1,62 +1,46 @@
 "use client"
-import { styled } from '@mui/material/styles';
-import Grid from '@mui/material/Grid';
-import Paper from '@mui/material/Paper';
-import Box from '@mui/material/Box';
+import React from 'react';
 import { motion } from 'framer-motion';
 import SectionWrapper from '../hoc/SectionWrapper';
+import { fadeIn, slideIn } from '../utils/motion';
 import { styles } from '../styles';
-import { fadeIn,slideIn } from '../utils/motion';
 
-const Item = styled(Paper)(({ theme }) => ({
-  backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
-  ...theme.typography.body2,
-  padding: theme.spacing(2),
-  textAlign: 'center',
-  color: theme.palette.text.secondary,
-  height: '100%',
-  display: 'flex',
-  flexDirection: 'column',
-  justifyContent: 'center',
-  alignItems: 'center',
-}));
+const UtilityBox = ({ bgColor, text }) => (
+  <div
+    className={`bg-${bgColor} md:px-12 md:py-10 px-6 py-4 md:text-lg font-bold text-black-100 h-full flex flex-col justify-center items-center rounded-lg`}
+  >
+    {text}
+  </div>
+);
 
 const Utility = (index) => {
+  const boxes = [
+    { text: 'Discord Subscription Bot', bgColor: 'yellow-200' },
+    { text: 'Telegram Bot', bgColor: 'slate-400' },
+    { text: 'OnlyHub Platform', bgColor: 'blue-200' },
+    { text: 'Coming Soon', bgColor: 'green-200' },
+  ];
+
   return (
-    <section id="utility" className="mt-5 mb-15">
+    <section id="utility" className="mt-5 mb-[70px]">
       <motion.div
-        variants={fadeIn("up", "spring", 0.5 * index, 0.75)}
+        variants={fadeIn('up', 'spring', 0.5 * index, 0.75)}
         className="my-8"
       >
         <h2 className={styles.sectionHeadText}>Utilities</h2>
       </motion.div>
 
-      <Box sx={{ width: "100%", padding: 2 }}>
-        <Grid container spacing={2}>
-          <Grid item xs={12} md={6} lg={6}>
-            <motion.div variants={slideIn("left","spring")}>
-              <Item className="bg-yellow-200 text-lg font-bold">
-                Discord Subscription Bot
-              </Item>
-            </motion.div>
-          </Grid>
-          <Grid item xs={12} md={6} lg={6}>
-          <motion.div variants={slideIn("right","spring")}>
-            <Item className="bg-slate-400 text-lg font-bold">Telegram Bot</Item>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-4">
+        {boxes.map((box, index) => (
+          <motion.div
+            key={index}
+            variants={slideIn(index % 2 === 0 ? 'left' : 'right', 'spring')}
+            className="flex-grow"
+          >
+            <UtilityBox bgColor={box.bgColor} text={box.text} />
           </motion.div>
-          </Grid>
-          <Grid item xs={12} md={6} lg={6}>
-          <motion.div variants={slideIn("left","spring")}>
-            <Item className="bg-blue-200 text-lg font-bold">
-              OnlyHub Platform
-            </Item>
-          </motion.div >
-          </Grid>
-          <Grid item xs={12} md={6} lg={6}>
-          <motion.div variants={slideIn("right","spring")}><Item className="bg-green-200 text-lg font-bold">Coming Soon</Item></motion.div>
-          </Grid>
-        </Grid>
-      </Box>
+        ))}
+      </div>
     </section>
   );
 };
