@@ -31,6 +31,7 @@ const Utility = (index) => {
       </motion.div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-4">
+        <p className='text-white font-medium'>SOON</p>
         {boxes.map((box, index) => (
           <div
             key={index}
