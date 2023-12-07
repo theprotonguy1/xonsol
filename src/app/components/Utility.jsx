@@ -32,13 +32,13 @@ const Utility = (index) => {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-4">
         {boxes.map((box, index) => (
-          <motion.div
+          <div
             key={index}
             variants={slideIn(index % 2 === 0 ? 'left' : 'right', 'spring')}
             className="flex-grow"
           >
             <UtilityBox bgColor={box.bgColor} text={box.text} />
-          </motion.div>
+          </div>
         ))}
       </div>
     </section>
