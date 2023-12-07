@@ -1,4 +1,4 @@
-import {Hero,About,Roadmap,Tokenomics,Utility } from "./components"
+import {Hero,About,Roadmap,Tokenomics,Utility,Utilit } from "./components"
 
 export default function Home() {
   
@@ -7,6 +7,7 @@ export default function Home() {
       <Hero />
       <About />
       <Roadmap />
+      <Utilit />
       <Utility />
       <Tokenomics />
     </main>

@@ -13,7 +13,7 @@ const UtilityBox = ({ bgColor, text }) => (
   </div>
 );
 
-const Utility = (index) => {
+const Utilit = (index) => {
   const boxes = [
     { text: 'Discord Subscription Bot', bgColor: 'yellow-200' },
     { text: 'Telegram Bot', bgColor: 'slate-400' },
@@ -22,7 +22,7 @@ const Utility = (index) => {
   ];
 
   return (
-    <section id="utility" className="mt-5 mb-[70px]">
+    <section id="utilit" className="mt-5 mb-[70px]">
       <motion.div
         variants={fadeIn('up', 'spring', 0.5 * index, 0.75)}
         className="my-8"
@@ -45,4 +45,4 @@ const Utility = (index) => {
   );
 };
 
-export default SectionWrapper(Utility, 'utility');
+export default SectionWrapper(Utilit, 'utilit');
