@@ -36,7 +36,7 @@ const ServiceCard = ({ index, title, icon, desc }) => {
 
 const Tokenomics = (index) => {
   return (
-    <div id='tokenomics' className='px-12 my-10'>
+    <div id='tokenomics' className='px-12 md:mt-20 my-10'>
       <motion.div  variants={fadeIn("left","spring",0.5 * index, 0.75)}>
         <h2 className={styles.sectionHeadText}>Tokenomics</h2>
         <p className={styles.sectionSubText}>

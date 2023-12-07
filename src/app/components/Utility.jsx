@@ -23,7 +23,7 @@ const Item = styled(Paper)(({ theme }) => ({
 
 const Utility = (index) => {
   return (
-    <section id="utility" className="mt-10 mb-15">
+    <section id="utility" className="mt-5 mb-15">
       <motion.div
         variants={fadeIn("up", "spring", 0.5 * index, 0.75)}
         className="my-8"
